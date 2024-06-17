@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>OpenLayers Map with Nominatim Search</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.js"></script>
+  </head>
+  <body>
+    <div id="search-container">
+      <input
+        type="text"
+        id="search-box"
+        placeholder="Search for a location..."
+      />
+      <button onclick="searchLocation()">Search</button>
+    </div>
+    <div id="map" class="map"></div>
+    <script src="index.js"></script>
+  </body>
+</html>
