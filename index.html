@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -18,6 +18,58 @@
         id="search-box"
         placeholder="Search for a location..."
       />
+      <button onclick="searchLocation()">Search</button>
+    </div>
+    <div id="map" class="map"></div>
+    <script src="index.js"></script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>OpenLayers Map with Nominatim Search</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.js"></script>
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+      }
+      .suggestions {
+        border: 1px solid #ccc;
+        max-height: 150px;
+        overflow-y: auto;
+      }
+      .suggestion-item {
+        padding: 8px;
+        cursor: pointer;
+      }
+      .suggestion-item:hover {
+        background-color: #ddd;
+      }
+      .marker {
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="search-container">
+      <input
+        type="text"
+        id="search-box"
+        placeholder="Search for a location..."
+        oninput="showSuggestions()"
+      />
+      <div id="suggestions" class="suggestions"></div>
       <button onclick="searchLocation()">Search</button>
     </div>
     <div id="map" class="map"></div>
